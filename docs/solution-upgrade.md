@@ -26,12 +26,6 @@ apt update && apt upgrade -y
 
 ## PrestaShop Upgrade
 
-PrestaShop provide two methond for Upgrade: PrestaShop backend online upgrade and Composer command upgrade  
-
-Below is the step for upgrade online:
-
-## PrestaShop Upgrade
-
 Installing the module 【1-Click Upgrade】for Prestashop upgrading online
 
 1. Log in PrestaShop console, open【Modules Catalog】, search the module【upgrade】 and install it
@@ -46,7 +40,7 @@ Installing the module 【1-Click Upgrade】for Prestashop upgrading online
    - If you can't complete this step to download a new version, you need to try multiple times.
    - May get the error “you don't have permission...ajax-upgradetab.php”
 
-> More upgrade details please refer to: [PrestaShop Backup](http://doc.prestashop.com/display/PS16/Manual+update)
+> More upgrade details please refer to: [PrestaShop Upgrade](http://doc.prestashop.com/display/PS16/Manual+update)
 
 ## PrestaShop Module Upgrade
 
