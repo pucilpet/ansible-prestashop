@@ -1,0 +1,54 @@
+---
+---
+#引入PHP运行环境元数据，并初始化
+- include_vars: roles/role_php-fpm/vars/php_runtime_meta.yml
+
+#Modify var for this playbook
+- set_fact:
+    prestashop_vhost_dir: "{{php_runtime_meta[ansible_distribution][prestashop_webs].vhost_dir}}"
+    prestashop_vhost_src: "{{php_runtime_meta[ansible_distribution][prestashop_webs].vhost_src}}"
+    prestashop_service: "{{php_runtime_meta[ansible_distribution][prestashop_webs].service}}"
+    prestashop_owner: "{{php_runtime_meta[ansible_distribution][prestashop_webs].owner}}"
+
+- debug:
+    msg: runtime {{ prestashop_vhost_dir }}, {{prestashop_vhost_src}}, {{prestashop_service}}, {{prestashop_owner}}, {{prestashop_webs}}, {{ansible_distribution}}
+
+# 9panel
+- name: Enable 9panel I
+  lineinfile:
+    path: /data/apps/9panel/js/websoft9.js
+    regexp: 'var set_apps=\["Example"\];'
+    line: 'var set_apps=["Prestashop"];'
+
+# PrestaShop
+- name: Remove example dir
+  file:
+    path: /data/wwwroot/www.example.com
+    state: absent
+
+- name: create folder
+  file:
+    path: /data/wwwroot/prestashop
+    state: directory
+    mode: 0750
+
+- name: Download PrestaShop
+  git:
+    repo: https://github.com/PrestaShop/PrestaShop.git
+    dest: /data/wwwroot/prestashop
+    version: "{{prestashop_version}}"
+
+# 系统通用
+- name: Permission directory
+  shell: find /data/wwwroot -type d -exec chmod 750 {} \;
+  
+- name: Permission file
+  shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
+
+# 根据不同的基础环境分别处理
+- block:
+  - name: change owner&group for Apache
+    shell: chown -R {{prestashop_owner}}:{{prestashop_owner}} /data/wwwroot
+
+  - name: Copy Apache or Nginx vhost configuration
+    copy: src={{prestashop_vhost_src}} dest={{prestashop_vhost_dir}}

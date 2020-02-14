@@ -1,53 +1,68 @@
-# Prestashop
 
-## 说明
-此项目是用Ansible编写的Prestashop自动安装程序
+# PrestaShop 自动化安装与部署
 
-## 安装基础环境
+本项目是由 [Websoft9](https://www.websoft9.com) 研发的 [PrestaShop](https://prestashop.com/) 自动化安装程序，开发语言是 Ansible。使用本项目，只需要用户在 Linux 上运行一条命令，即可自动化安装 Redis，让原本复杂的安装过程变得没有任何技术门槛。  
 
-### 基础环境要求
+本项目是开源项目，采用 LGPL3.0 开源协议。
 
-官方对基础环境的最低要求建议:https://www.prestashop.com/en/system-requirements
-同时官方还提供了一份更为详细的配置建议：http://doc.prestashop.com/display/PS17/What+you+need+to+get+started
+## 配置要求
 
-摘抄：
-~~~
-A domain name (or a subdomain/subfolder)
-Recommended web server: Apache 2.x, Nginx or Microsoft IIS
-PHP 5.6+
-MySQL 5.0+ installed with a database created
-FTP access (ask your hosting service for your credentials)
-Configuration
-In the PHP configuration (php.ini file) set memory_limit to "128M" and upload_max_filesize to "16M" (or more if available). If you do not have direct access to the php.ini file, ask your provider to change the settings for you.
-SSL certificate if you plan to process payments internally (not using PayPal for instance)
-Must have PHP extensions: Mcrypt, OpenSSL, Zip, Curl, GD, PDO
-To improve performances: MemCached, Apc, OpCache
-~~~
+安装本项目，确保符合如下的条件：
 
-基于官方的要求，本程序仅适用于Websoft9的基础环境，包括：
+| 条件       | 详情       | 备注  |
+| ------------ | ------------ | ----- |
+| 操作系统       | CentOS7.x       |   |
+| 公有云| AWS, Azure, 阿里云, 华为云, 腾讯云 | 可选 |
+| 私有云|  KVM, VMware, VirtualBox, OpenStack | 可选 |
+| 服务器配置 | 最低1核1G，安装时所需的带宽不低于10M |  建议采用按量100M带宽 |
 
-* LAMP
-* LNMP（暂未实现）
+## 组件
 
-本程序在php7.0,mysql5.6下测试运行正常
+包含的核心组件为：PrestaShop + Apache/Nginx + MySQL + PHP
 
-### 适用于的操作系统
+更多请见：[参数表](/docs/zh/stack-components.md)
 
-* CentOS7.X
-* Ubuntu（暂时不支持）
+## 本项目安装的是 PrestaShop 最新版吗？
 
-### 服务器配置要求
+本项目通过下载[prestashop源码](https://github.com/PrestaShop/PrestaShop)进行安装，其中版本号存储在：[role/prestashop/default/main.yml](/roles/prestashop/defaults/main.yml)
 
-* 建议最低配置1核1G
+```
+#prestashop版本，需定期维护
+prestashop_version: 1.7.6.3
+```
 
+如果你想修改版本号，请先查看 prestashop 仓库 [tags](https://github.com/PrestaShop/PrestaShop/tags) 标签值，再修改上面的 `prestashop_version` 变量值。
 
-## 源码包
+我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
 
-目前直接到官方在线下载：https://www.prestashop.com/en/download
+## 安装指南
 
-### 版本
-当前版本为1.7.5.0
+以 root 用户登录 Linux，运行下面的**一键自动化安装命令**即可启动自动化部署。若没有 root 用户，请以其他用户登录 Linux 后运行 `sudo su -` 命令提升为 root 权限，然后再运行下面的脚本。
+
+```
+wget -N https://raw.githubusercontent.com/Websoft9/linux/master/ansible_script/install.sh ; bash install.sh repository=prestashop
+```
+
+脚本后启动，就开始了自动化安装，必要时需要用户做出交互式选择，然后耐心等待直至安装成功。
+
+**安装中的注意事项：**  
+
+1. 操作不慎或网络发生变化，可能会导致SSH连接被中断，安装就会失败，此时请重新安装
+2. 安装缓慢、停滞不前或无故中断，主要是网络不通（或网速太慢）导致的下载问题，此时请重新安装
+
+多种原因导致无法顺利安装，请使用我们在公有云上发布的 [PrestaShop镜像](https://apps.websoft9.com/prestashop) 的部署方式
+
 
 ## 文档
 
-参考：https://support.websoft9.com/docs/prestashop
+文档链接：https://support.websoft9.com/docs/prestashop/zh
+
+## FAQ
+
+- 命令脚本部署与镜像部署有什么区别？请参考：[镜像部署-vs-脚本部署](https://support.websoft9.com/docs/faq/zh/bz-product.html#镜像部署-vs-脚本部署)
+- 本项目支持在 Ansible Tower 上运行吗？支持
+
+## To do
+
+* 添加 Nginx 支持
+* 添加 Ubuntu18.04, Amazon Linux2 支持

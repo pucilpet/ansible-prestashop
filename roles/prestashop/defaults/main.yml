@@ -1,0 +1,10 @@
+#prestashop版本，需定期维护
+prestashop_version: 1.7.6.3
+
+#Web服务器：apache | nginx，通过交互式选择获取
+prestashop_webs: apache
+
+prestashop_vhost_dir: /etc/httpd/vhost
+prestashop_vhost_src: vhost.conf
+prestashop_service: httpd
+prestashop_owner: apache
