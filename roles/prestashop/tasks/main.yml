@@ -48,7 +48,10 @@
 # 根据不同的基础环境分别处理
 - block:
   - name: change owner&group for Apache
-    shell: chown -R {{prestashop_owner}}:{{prestashop_owner}} /data/wwwroot
+    shell: chown -R {{owncloud_owner}}:{{owncloud_owner}} /data/wwwroot
 
   - name: Copy Apache or Nginx vhost configuration
-    copy: src={{prestashop_vhost_src}} dest={{prestashop_vhost_dir}}
+    copy: src={{owncloud_vhost_src}} dest={{owncloud_vhost_dir}}
+    
+  - name: restart Apache or Nginx
+    service: name={{owncloud_service}} state=restarted enabled=yes
