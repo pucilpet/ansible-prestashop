@@ -5,10 +5,10 @@
 
 #Modify var for this playbook
 - set_fact:
-    prestashop_vhost_dir: "{{php_runtime_meta[ansible_distribution][prestashop_webs].vhost_dir}}"
-    prestashop_vhost_src: "{{php_runtime_meta[ansible_distribution][prestashop_webs].vhost_src}}"
-    prestashop_service: "{{php_runtime_meta[ansible_distribution][prestashop_webs].service}}"
-    prestashop_owner: "{{php_runtime_meta[ansible_distribution][prestashop_webs].owner}}"
+    prestashop_vhost_dir: "{{php_runtime_meta[ansible_os_family][prestashop_webs].vhost_dir}}"
+    prestashop_vhost_src: "{{php_runtime_meta[ansible_os_family][prestashop_webs].vhost_src}}"
+    prestashop_service: "{{php_runtime_meta[ansible_os_family][prestashop_webs].service}}"
+    prestashop_owner: "{{php_runtime_meta[ansible_os_family][prestashop_webs].owner}}"
 
 - debug:
     msg: runtime {{ prestashop_vhost_dir }}, {{prestashop_vhost_src}}, {{prestashop_service}}, {{prestashop_owner}}, {{prestashop_webs}}, {{ansible_distribution}}
