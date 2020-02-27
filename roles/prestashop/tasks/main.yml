@@ -22,10 +22,27 @@
     state: directory
 
 - name: Download PrestaShop
-  git:
-    repo: "{{prestashop_download_url}}"
-    dest: /data/wwwroot/prestashop
-    version: "{{prestashop_version}}"
+  unarchive:
+    src: "{{prestashop_download_url}}"
+    dest: /data/wwwroot/
+    remote_src: yes
+
+- name: delete extra file
+  file:
+    path: "{{item}}"
+    state: absent
+  with_items:
+    - /data/wwwroot/index.php
+    - /data/wwwroot/Install_PrestaShop.html
+
+- name: unzip prestashop
+  unarchive:
+    src: /data/wwwroot/prestashop.zip
+    dest: /data/wwwroot/prestathop
+    remote_src: yes
+
+- name: Rename dir name
+  shell: cd /data/wwwroot; if [ ! -d "{{prestashop_name}}" ]; then mv *{{prestashop_name}}* {{prestashop_name}}; fi
 
 # 系统通用
 - name: Permission directory
