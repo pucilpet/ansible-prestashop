@@ -5,6 +5,8 @@ prestashop_vhost_dir: /etc/httpd/vhost
 prestashop_vhost_src: vhost.conf
 prestashop_service: httpd
 prestashop_owner: apache
+prestashop_name: prestashop
+prestashop_title: PrestaShop
 prestashop_download_url: https://github.com/PrestaShop/PrestaShop.git
 #prestashop版本，需定期维护
 prestashop_version: 1.7.6.3
