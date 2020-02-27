@@ -38,7 +38,7 @@
 - name: unzip prestashop
   unarchive:
     src: /data/wwwroot/prestashop.zip
-    dest: /data/wwwroot/prestathop
+    dest: /data/wwwroot/prestashop
     remote_src: yes
 
 - name: Rename dir name
