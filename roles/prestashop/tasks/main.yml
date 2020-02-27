@@ -12,37 +12,26 @@
 - debug:
     msg: runtime {{ prestashop_vhost_dir }}, {{prestashop_vhost_src}}, {{prestashop_service}}, {{prestashop_owner}}, {{prestashop_webs}}, {{ansible_distribution}}
 
-# 9panel
-- name: Enable 9panel I
-  lineinfile:
-    path: /data/apps/9panel/js/websoft9.js
-    regexp: 'var set_apps=\["Example"\];'
-    line: 'var set_apps=["Prestashop"];'
-
 # PrestaShop
-- name: Remove example dir
-  file:
-    path: /data/wwwroot/www.example.com
-    state: absent
+- name: Remove existing dir
+  shell: rm -rf /data/wwwroot/{{prestashop_name}}
 
-- name: create folder
+- name: Create dir
   file:
     path: /data/wwwroot/prestashop
     state: directory
-    mode: 0750
 
 - name: Download PrestaShop
-  git:
-    repo: https://github.com/PrestaShop/PrestaShop.git
+  unarchive:
+    src: "{{prestashop}}"
     dest: /data/wwwroot/prestashop
     version: "{{prestashop_version}}"
 
 # 系统通用
 - name: Permission directory
-  shell: find /data/wwwroot -type d -exec chmod 750 {} \;
-  
-- name: Permission file
-  shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
+  shell: |
+    find /data/wwwroot -type d -exec chmod 750 {} \;
+    find /data/wwwroot -not -type d -exec chmod 640 {} \;
 
 # 根据不同的基础环境分别处理
 - block:
@@ -50,7 +39,7 @@
     shell: chown -R {{owncloud_owner}}:{{owncloud_owner}} /data/wwwroot
 
   - name: Copy Apache or Nginx vhost configuration
-    copy: src={{owncloud_vhost_src}} dest={{owncloud_vhost_dir}}
+    template: src={{owncloud_vhost_src}} dest={{owncloud_vhost_dir}}
     
   - name: restart Apache or Nginx
     service: name={{owncloud_service}} state=restarted enabled=yes
