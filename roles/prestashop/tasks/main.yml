@@ -22,8 +22,8 @@
     state: directory
 
 - name: Download PrestaShop
-  unarchive:
-    src: "{{prestashop}}"
+  git:
+    repo: "{{prestashop_download_url}}"
     dest: /data/wwwroot/prestashop
     version: "{{prestashop_version}}"
 
