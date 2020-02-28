@@ -5,6 +5,7 @@ prestashop_vhost_dir: /etc/httpd/vhost
 prestashop_vhost_src: vhost.conf
 prestashop_service: httpd
 prestashop_owner: apache
+prestashop_db_password: "123456"
 prestashop_name: prestashop
 prestashop_title: PrestaShop
 # 此链接需要定期维护

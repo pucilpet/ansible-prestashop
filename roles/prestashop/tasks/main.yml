@@ -8,18 +8,14 @@
     prestashop_vhost_src: "{{php_runtime_meta[ansible_os_family][prestashop_webs].vhost_src}}"
     prestashop_service: "{{php_runtime_meta[ansible_os_family][prestashop_webs].service}}"
     prestashop_owner: "{{php_runtime_meta[ansible_os_family][prestashop_webs].owner}}"
+    prestashop_db_password: "{{mysql_root_password}}"
 
 - debug:
     msg: runtime {{ prestashop_vhost_dir }}, {{prestashop_vhost_src}}, {{prestashop_service}}, {{prestashop_owner}}, {{prestashop_webs}}, {{ansible_distribution}}
 
 # PrestaShop
 - name: Remove existing dir
-  shell: rm -rf /data/wwwroot/{{prestashop_name}}
-
-- name: Create dir
-  file:
-    path: /data/wwwroot/prestashop
-    state: directory
+  shell: rm -rf /data/wwwroot/*{{prestashop_name}}*
 
 - name: Download PrestaShop
   unarchive:
@@ -61,3 +57,6 @@
     
   - name: restart Apache or Nginx
     service: name={{prestashop_service}} state=restarted enabled=yes
+
+  - name: restart php-fpm
+    service: name=php-fpm state=restarted
