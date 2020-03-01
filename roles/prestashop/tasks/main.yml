@@ -17,26 +17,16 @@
 - name: Remove existing dir
   shell: rm -rf /data/wwwroot/*{{prestashop_name}}*
 
+- name: Create Prestashop directory
+  file:
+    path: /data/wwwroot/{{prestashop_name}}
+    state: directory
+#Prestashop下载包解压后包含一个index.php和prestashop.zip文件，无需再解压就可以安装    
 - name: Download PrestaShop
   unarchive:
     src: "{{prestashop_download_url}}"
     dest: /data/wwwroot/
     remote_src: yes
-
-- name: unzip prestashop
-  unarchive:
-    src: /data/wwwroot/prestashop.zip
-    dest: /data/wwwroot/prestashop
-    remote_src: yes
-
-- name: delete extra file
-  file:
-    path: "{{item}}"
-    state: absent
-  with_items:
-    - /data/wwwroot/index.php
-    - /data/wwwroot/Install_PrestaShop.html
-    - /data/wwwroot/prestashop.zip
 
 - name: Rename dir name
   shell: cd /data/wwwroot; if [ ! -d "{{prestashop_name}}" ]; then mv *{{prestashop_name}}* {{prestashop_name}}; fi
