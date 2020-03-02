@@ -24,16 +24,13 @@
 
 ## 本项目安装的是 PrestaShop 最新版吗？
 
-本项目通过下载[prestashop源码](https://www.prestashop.com/en/download?ab=1)进行安装，其中版本号存储在：[role/prestashop/default/main.yml](/roles/prestashop/defaults/main.yml)
+本项目通过下载 PrestaShop 源码进行安装，下载链接存储在：[role/prestashop/default/main.yml](/roles/prestashop/defaults/main.yml)。我们会定期检查并测试官方版本的可用性，尽可能保证用户可以顺利安装最新版。
 
 ```
-# 此链接需要定期维护
 prestashop_download_url: https://download.prestashop.com/download/releases/prestashop_1.7.6.3.zip
 ```
 
-如果你想修改版本号，请先查看 prestashop 仓库 [releases](https://github.com/PrestaShop/PrestaShop/releases) 下载链接，再修改 [role/prestashop/default/main.yml](/roles/prestashop/defaults/main.yml) 文件的 `prestashop_download_url` 变量值即可安装指定版本。
-
-我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
+如果你发现不是最新版本，请查看 [PrestaShop 下载页面 ](https://www.prestashop.com/en/previous-versions?ab=1)获取最新版源码下载链接，再修改 [main.yml](/roles/prestashop/defaults/main.yml) 中的 `prestashop_download_url` 变量值即可安装最新版本的 PrestaShop。
 
 ## 安装指南
 
