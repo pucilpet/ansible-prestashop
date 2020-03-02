@@ -21,11 +21,12 @@
   file:
     path: /data/wwwroot/{{prestashop_name}}
     state: directory
+    
 #Prestashop下载包解压后包含一个index.php和prestashop.zip文件，无需再解压就可以安装    
 - name: Download PrestaShop
   unarchive:
     src: "{{prestashop_download_url}}"
-    dest: /data/wwwroot/
+    dest: /data/wwwroot/{{prestashop_name}}
     remote_src: yes
 
 - name: Rename dir name
