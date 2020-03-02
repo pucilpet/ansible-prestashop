@@ -31,7 +31,7 @@
 prestashop_download_url: https://download.prestashop.com/download/releases/prestashop_1.7.6.3.zip
 ```
 
-如果你想修改版本号，请先查看 prestashop 仓库 [tags](https://github.com/PrestaShop/PrestaShop/tags) 标签值，再修改上面的 `prestashop_version` 变量值。
+如果你想修改版本号，请先查看 prestashop 仓库 [releases](https://github.com/PrestaShop/PrestaShop/releases) 下载链接，再修改 [role/prestashop/default/main.yml](/roles/prestashop/defaults/main.yml) 文件的 `prestashop_download_url` 变量值即可安装指定版本。
 
 我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
 
