@@ -61,7 +61,7 @@ Example application's path is: */data/wwwroot/prestashop*, you can modify it by 
 
 Please delete all files in 9Panel */data/apps/9panel* and keep an empty 9Panel folder
 
-#### How to change the permissions of filesytem?
+#### How to change the permissions of file system?
 
 Change owner(group) or permissions like below:
 

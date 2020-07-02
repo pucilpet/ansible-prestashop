@@ -64,7 +64,15 @@ Modules is a very import function for PrestaShop to extend the business requirem
 
 ## Prestashop connect Marketplace
 
-Completed installation of PrestaShop, suggest you make your PrestaShop system connect PrestaShop's Marketplace. Once you have connected it, you can use many resourses on Marketplace. Refer to [Connect Marketplace](/stack-installation.html#connect-prestashop-marketplace)
+Completed installation of PrestaShop, suggest you make your PrestaShop system connect PrestaShop's Marketplace. Once you have connected it, you can use many resourses on Marketplace.
+
+1. Log in PrestaShop Console as administrator
+2. Open 【Modules】>【Module Manager】, click【Connect to Addons marketplace】
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-connectmk-websoft9.png)  
+3. Register an account if you don't have it
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-registeraccount-websoft9.png)  
+4. Connect to Marketplace using your Marketplace's account
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/en/prestashop/prestashop-marketplace-websoft9.png)
 
 ## PrestaShop language
 
