@@ -9,5 +9,5 @@ prestashop_db_password: "123456"
 prestashop_name: prestashop
 prestashop_title: PrestaShop
 # 此链接需要定期维护
-prestashop_download_url: https://download.prestashop.com/download/releases/prestashop_1.7.6.5.zip
+prestashop_download_url: https://download.prestashop.com/download/releases/prestashop_1.7.6.7.zip
 
