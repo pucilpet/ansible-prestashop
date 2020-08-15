@@ -30,7 +30,7 @@
 prestashop_download_url: https://download.prestashop.com/download/releases/prestashop_1.7.6.5.zip
 ```
 
-如果你发现不是最新版本，请查看 [PrestaShop 下载页面 ](https://www.prestashop.com/en/previous-versions?ab=1)获取最新版源码下载链接，再修改 [main.yml](/roles/prestashop/defaults/main.yml) 中的 `prestashop_download_url` 变量值即可安装最新版本的 PrestaShop。
+如果你发现不是最新版本，请查看 [PrestaShop 下载页面 ](https://github.com/PrestaShop/PrestaShop/releases)获取最新版源码下载链接，再修改 [main.yml](/roles/prestashop/defaults/main.yml) 中的 `prestashop_download_url` 变量值即可安装最新版本的 PrestaShop。
 
 ## 安装指南
 
