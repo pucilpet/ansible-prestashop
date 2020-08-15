@@ -1,2 +1,3 @@
 ## Installation
-[System Requirements](https://www.prestashop.com/en/system-requirements)
+
+* [System Requirements](https://www.prestashop.com/en/system-requirements)
