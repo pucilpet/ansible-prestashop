@@ -62,7 +62,7 @@ Modules is a very import function for PrestaShop to extend the business requirem
 3. Open:【Modules】>【Module Manager】, find the module you want to upgrade and click the【Upgrade】button
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-upgrademodules-websoft9.png)
 
-<!-- ## Prestashop connect Marketplace
+## Prestashop connect Marketplace
 
 Completed installation of PrestaShop, suggest you make your PrestaShop system connect PrestaShop's Marketplace. Once you have connected it, you can use many resourses on Marketplace.
 
@@ -72,7 +72,7 @@ Completed installation of PrestaShop, suggest you make your PrestaShop system co
 3. Register an account if you don't have it
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-registeraccount-websoft9.png)  
 4. Connect to Marketplace using your Marketplace's account
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/en/prestashop/prestashop-marketplace-websoft9.png) -->
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/en/prestashop/prestashop-marketplace-websoft9.png)
 
 ## PrestaShop language
 
