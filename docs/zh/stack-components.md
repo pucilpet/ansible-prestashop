@@ -38,7 +38,7 @@ Nginx 日志文件： */var/log/nginx/*
 MySQL 安装路径: */usr/local/mysql*  
 MySQL 数据文件 */data/mysql*  
 MySQL 配置文件: */etc/my.cnf*    
-MySQL 可视化管理地址: *http://服务器公网IP/phpmyadmin*，用户名和密码请见 [账号密码](/zh/stack-accounts.md) 章节。
+MySQL 可视化管理地址: *http://服务器公网IP:9090*，用户名和密码请见 [账号密码](/zh/stack-accounts.md) 章节。
 
 ### phpMyAdmin
 
