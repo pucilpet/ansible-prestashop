@@ -21,7 +21,7 @@
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-installss-websoft9.png)
 6. 登录后台，系统提示删除intall文件夹
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-delinstall-websoft9.png)
-7. 使用WinSCP登录到服务器，进入 */data/wwwrootprestashop*，删除 **install** 文件夹
+7. 使用WinSCP登录到服务器，进入 */data/wwwroot/prestashop*，删除 **install** 文件夹
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-delinstallftp-websoft9.png)
 8. 删除完成后，点击第六步的后台链接，开始体验后台（请牢记后台地址）
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-login-websoft9.png)
