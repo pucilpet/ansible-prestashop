@@ -10,21 +10,33 @@
 
 ## PrestaShop 安装向导
 
-1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 就进入引导首页
+1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 就进入引导首页  
+
+   可能会有小版本的升级提醒，建议点击【yes,please!】
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-installupdate-websoft9.png)
+   
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-language-websoft9.png)
+   
 2. 选择语言，接受许可协议，继续下一步
-3. 安装进入管理员账号设置界面，牢记之，点击“下一步”
+
+4. 安装进入管理员账号设置界面，牢记之，点击“下一步”
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-adminconf-websoft9.png)
+   
 4. 安装进入数据库配置界面（[不知道数据库密码？](/zh/stack-accounts.html#mysql)）然后点击”保存”
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-dbconfig-websoft9.png)
+   
 5. 系统安装成功，分别进入后台和前台体验
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-installss-websoft9.png)
+   
 6. 登录后台，系统提示删除intall文件夹
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-delinstall-websoft9.png)
+   
 7. 使用WinSCP登录到服务器，进入 */data/wwwroot/prestashop*，删除 **install** 文件夹
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-delinstallftp-websoft9.png)
+   
 8. 删除完成后，点击第六步的后台链接，开始体验后台（请牢记后台地址）
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-login-websoft9.png)
+   
 9. 登录成功，体验后台
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/prestashop/prestashop-backend-websoft9.png)
 
