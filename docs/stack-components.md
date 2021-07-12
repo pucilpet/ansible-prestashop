@@ -36,7 +36,7 @@ Nginx logs file: */var/log/nginx/*
 MySQL installation directory: */usr/local/mysql*  
 MySQL data directory: */data/mysql*  
 MySQL configuration file: */etc/my.cnf*    
-MySQL Web Management URL: *http://Internet IP/phpmyadmin*, [get credential](/stack-accounts.md)
+MySQL Web Management URL: *http://Internet IP:9090*, [get credential](/stack-accounts.md)
 
 ### phpMyAdmin
 
