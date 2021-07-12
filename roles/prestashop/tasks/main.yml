@@ -51,3 +51,8 @@
 
   - name: restart php-fpm
     service: name=php-fpm state=restarted
+
+# check version
+- name: Check prestashop version
+  shell: |
+    sudo echo  $(cat /data/wwwroot/prestashop/install/install_version.php |grep PS_INSTALL_VERSION |awk -F "'" '{print $4}') |sudo tee -a /data/logs/install_version.txt 
