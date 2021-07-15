@@ -55,4 +55,4 @@
 # check version
 - name: Check prestashop version
   shell: |
-    sudo echo "prestashop version:" $(echo {{prestashop_download_url}} |awk -F _ '{print $2}')|sudo tee -a /data/logs/install_version.txt 
+    sudo echo "prestashop version:" $(echo {{prestashop_download_url}} |awk -F _ '{print $2}') |sudo tee -a /data/logs/install_version.txt 
