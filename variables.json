@@ -1,18 +1,18 @@
 {
   "name": "prestashop",
   "trademark": "PrestaShop",
-  "official_url": "https://www.prestashop.com/",
+  "official_url": "https://prestashop.com/",
   "support_os": "CentOS7.x, Ubuntu20.04, Amazon Linux2",
-  "requirements_cpu": "2",
-  "requirements_memory": "4",
+  "requirements_cpu": "1",
+  "requirements_memory": "1",
   "requirements_Bandwidth": "100",
   "requirements_disk": "20",
   "requirements_swap": "2",
-  "requirements_configure_url": "https://www.prestashop.com/en/system-requirements",
+  "requirements_configure_url": "http://doc.prestashop.com/display/PS17/What+you+need+to+get+started#Whatyouneedtogetstarted-Technicalrequirements",
   "components": "MySQL, Docker, PHP, Redis, phpMyAdmin on Docker, Nginx or Apache(optional)",
   "install_way": {
-    "en": "Package isntallation",
-    "zh": "包安装"
+    "en": "Compile isntallation for source",
+    "zh": "下载源码编译安装"
   },
-  "install_url": "https://www.prestashop.com/en/versions"
+  "install_url": "https://github.com/PrestaShop/PrestaShop/releases"
 }
