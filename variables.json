@@ -11,8 +11,8 @@
   "requirements_configure_url": "https://www.prestashop.com/en/system-requirements",
   "components": "MySQL, Docker, PHP, Redis, phpMyAdmin on Docker, Nginx or Apache(optional)",
   "install_way": {
-    "en": "Package isntallation | Compile isntallation for source | Isntallation for download binaries files ",
-    "zh": "包安装 | 下载源码编译安装 | 下载可执行二进制包解压安装"
+    "en": "Package isntallation",
+    "zh": "包安装"
   },
   "install_url": "https://www.prestashop.com/en/versions"
 }
