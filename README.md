@@ -6,7 +6,7 @@
 
 [English](/README.md) | [简体中文](/README-zh.md)  
 
-**PrestaShop Cloud Installer**, developed by [Websoft9](https://www.websoft9.com), is an automatic installation program of [PrestaShop](https://www.prestashop.com/) based on Ansible and shell. It helps user install PrestaShop and pre-configure required items automatically and users only need to run a command on Linux. It simplifies the complicated installation and initialization process.  
+**PrestaShop Cloud Installer**, developed by [Websoft9](https://www.websoft9.com), is an automatic installation program of [PrestaShop](https://prestashop.com/) based on Ansible and shell. It helps user install PrestaShop and pre-configure required items automatically and users only need to run a command on Linux. It simplifies the complicated installation and initialization process.  
 
 ## System Requirement
 
@@ -17,9 +17,9 @@ System Requirement to install this repository are as following：
 | Operating System   | CentOS7.x, Ubuntu20.04, Amazon Linux2 | Optional                 |
 | Public Cloud     | AWS, Azure, Alibaba Cloud, HUAWEI ClOUD, Tencent Cloud    | Optional                 |
 | Private Cloud     | KVM, VMware, VirtualBox, OpenStack    | Optional                 |
-| Server Configuration | vCPU no less than 2 core, Memory no less than 4 GIB, Storage no less than 20 GB, Swap no less than 2GB |Bandwidth no less than 100M|
+| Server Configuration | vCPU no less than 1 core, Memory no less than 1 GIB, Storage no less than 20 GB, Swap no less than 2GB |Bandwidth no less than 100M|
 
-To learn more information, please view [Installation & Configuration](https://www.prestashop.com/en/system-requirements).
+To learn more information, please view [Installation & Configuration](http://doc.prestashop.com/display/PS17/What+you+need+to+get+started#Whatyouneedtogetstarted-Technicalrequirements).
 
 ## Ecosystem
 
@@ -62,7 +62,7 @@ This program provided by Websoft9 contains a series of software with separate co
 
 #### How to install and view the latest release?
 
-This repository install way is Package isntallation, you can  view the version from [Official URL](https://www.prestashop.com/en/versions).  
+This repository install way is Compile isntallation for source, you can  view the version from [Official URL](https://github.com/PrestaShop/PrestaShop/releases).  
 We will check [Release version](https://github.com/Websoft9/ansible-prestashop/releases) regularly. Update and test this project to ensure that users can successfully install the required version of PrestaShop.
 
 #### Can I run this repository on Ansible Tower? 
