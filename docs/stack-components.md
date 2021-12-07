@@ -61,6 +61,7 @@ These ports should be opened for this application:
 | MySQL | 3306 | Remote connect MySQL | Optional |
 | HTTP | 80 | HTTP requests for PrestaShop | Required |
 | HTTPS | 443 | HTTPS requests PrestaShop | Optional |
+| HTTP | 9090 | phpMyAdmin on Docker | Optional |
 
 ## Version
 
