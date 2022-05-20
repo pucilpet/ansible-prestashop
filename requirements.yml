@@ -23,4 +23,4 @@
 
 - src: http://github.com/websoft9/role_inotify_watch
 
-- src: http://github.com/websoft9/role_redis
+- src: http://github.com/pucilpet/role_redis
